@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
@@ -14,7 +14,9 @@ import Media from './pages/Media';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import Membership from './pages/Membership';
+import Maintenance from './pages/Maintenance';
 import ScrollToTop from './components/ScrollToTop';
+import { appConfig } from './config/appConfig';
 
 function App() {
   return (
@@ -23,18 +25,27 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/teams" element={<Teams />} />
-          <Route path="/matches" element={<Matches />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/academy" element={<Academy />} />
-          <Route path="/fans" element={<Fans />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/membership" element={<Membership />} />
+          {appConfig.isMaintenanceMode ? (
+            <>
+              <Route path="/maintenance" element={<Maintenance />} />
+              <Route path="*" element={<Navigate to="/maintenance" replace />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/teams" element={<Teams />} />
+              <Route path="/matches" element={<Matches />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/academy" element={<Academy />} />
+              <Route path="/fans" element={<Fans />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/media" element={<Media />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/membership" element={<Membership />} />
+            </>
+          )}
         </Routes>
       </Router>
     </ThemeProvider>

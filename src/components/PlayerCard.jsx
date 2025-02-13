@@ -8,7 +8,7 @@ const positionColors = {
   'Avançado': '#f44336'
 };
 
-function PlayerCard({ player }) {
+function PlayerCard({ name, position, nationality, flagCode, appearances, goals, assists, number, image }) {
   return (
     <motion.div
       whileHover={{ 
@@ -35,7 +35,7 @@ function PlayerCard({ player }) {
             left: 0,
             width: '100%',
             height: '100%',
-            background: `linear-gradient(45deg, ${positionColors[player.position]} 0%, transparent 60%)`,
+            background: `linear-gradient(45deg, ${positionColors[position]} 0%, transparent 60%)`,
             opacity: 0.1,
             zIndex: 1,
           },
@@ -69,7 +69,7 @@ function PlayerCard({ player }) {
             zIndex: 0,
           }}
         >
-          {player.number}
+          {number}
         </Typography>
 
         {/* Player Image Container */}
@@ -86,8 +86,8 @@ function PlayerCard({ player }) {
         >
           <Box
             component="img"
-            src={player.image}
-            alt={player.name}
+            src={image}
+            alt={name}
             sx={{
               width: '100%',
               height: '100%',
@@ -117,7 +117,7 @@ function PlayerCard({ player }) {
             <Box
               sx={{
                 display: 'inline-block',
-                backgroundColor: positionColors[player.position],
+                backgroundColor: positionColors[position],
                 color: 'white',
                 padding: '3px 10px',
                 borderRadius: '10px',
@@ -128,7 +128,7 @@ function PlayerCard({ player }) {
                 letterSpacing: '1px',
               }}
             >
-              {player.position}
+              {position}
             </Box>
             <Typography
               variant="h4"
@@ -140,7 +140,7 @@ function PlayerCard({ player }) {
                 fontSize: '1.25rem',
               }}
             >
-              {player.name}
+              {name}
             </Typography>
             <Box
               sx={{
@@ -152,9 +152,8 @@ function PlayerCard({ player }) {
             >
               <Box
                 component="img"
-                // src={`https://flagcdn.com/w20/${player.nationality.toLowerCase()}.png`}
-                src={`https://flagcdn.com/w20/pt.png`}
-                alt={player.nationality}
+                src={`https://flagcdn.com/w20/${flagCode.toLowerCase()}.png`}
+                alt={nationality}
                 sx={{
                   width: 20,
                   height: 'auto',
@@ -168,7 +167,7 @@ function PlayerCard({ player }) {
                   fontSize: '0.875rem',
                 }}
               >
-                {player.nationality}
+                {nationality}
               </Typography>
             </Box>
           </Box>
@@ -185,13 +184,13 @@ function PlayerCard({ player }) {
               <Typography
                 variant="h6"
                 sx={{
-                  color: positionColors[player.position],
+                  color: positionColors[position],
                   fontWeight: 'bold',
                   fontSize: '1.25rem',
                   lineHeight: 1,
                 }}
               >
-                {player.appearances}
+                {appearances}
               </Typography>
               <Typography
                 variant="caption"
@@ -202,20 +201,20 @@ function PlayerCard({ player }) {
                   letterSpacing: '1px',
                 }}
               >
-                Jogos
+                Minutos
               </Typography>
             </Box>
             <Box>
               <Typography
                 variant="h6"
                 sx={{
-                  color: positionColors[player.position],
+                  color: positionColors[position],
                   fontWeight: 'bold',
                   fontSize: '1.25rem',
                   lineHeight: 1,
                 }}
               >
-                {player.goals}
+                {goals}
               </Typography>
               <Typography
                 variant="caption"
@@ -233,13 +232,13 @@ function PlayerCard({ player }) {
               <Typography
                 variant="h6"
                 sx={{
-                  color: positionColors[player.position],
+                  color: positionColors[position],
                   fontWeight: 'bold',
                   fontSize: '1.25rem',
                   lineHeight: 1,
                 }}
               >
-                {player.assists}
+                {assists}
               </Typography>
               <Typography
                 variant="caption"
@@ -250,7 +249,7 @@ function PlayerCard({ player }) {
                   letterSpacing: '1px',
                 }}
               >
-                Assists
+                Assistências
               </Typography>
             </Box>
           </Box>
