@@ -1,0 +1,50 @@
+export const newsData = [
+  {
+    id: 1,
+    title: 'SCVB vence clássico em casa e mantém liderança',
+    excerpt: 'Uma vitória convincente por 3-1 mantém o SCVB no topo da tabela. Destaque para a exibição de João Silva com dois golos marcados e uma assistência no jogo deste domingo.',
+    image: '/images/news/match-victory.jpg',
+    category: 'Jogo',
+    date: '10 Fev 2025',
+  },
+  {
+    id: 2,
+    title: 'Academia SCVB forma nova geração de talentos',
+    excerpt: 'A academia do clube continua a produzir jovens talentos. Este ano, três jogadores subiram à equipa principal, mostrando o sucesso do nosso programa de formação.',
+    image: '/images/news/academy.jpg',
+    category: 'Academia',
+    date: '8 Fev 2025',
+  },
+  {
+    id: 3,
+    title: 'Renovação do Estádio Municipal em andamento',
+    excerpt: 'As obras de modernização do estádio avançam conforme planejado. Nova bancada e iluminação LED serão instaladas para melhorar a experiência dos torcedores.',
+    image: '/images/news/stadium.jpg',
+    category: 'Clube',
+    date: '5 Fev 2025',
+  },
+  {
+    id: 4,
+    title: 'SCVB assina parceria com marca desportiva',
+    excerpt: 'Novo acordo de patrocínio garante equipamentos de última geração para todas as equipas do clube, fortalecendo nossa infraestrutura.',
+    image: '/images/news/partnership.jpg',
+    category: 'Patrocínio',
+    date: '3 Fev 2025',
+  },
+  {
+    id: 5,
+    title: 'Capitão renova contrato por mais duas épocas',
+    excerpt: 'António Ferreira, capitão da equipa há 5 anos, renovou seu vínculo com o clube até 2027, demonstrando seu compromisso com o SCVB.',
+    image: '/images/news/captain.jpg',
+    category: 'Contrato',
+    date: '1 Fev 2025',
+  },
+  {
+    id: 6,
+    title: 'Torneio de Juvenis foi um sucesso',
+    excerpt: 'O torneio organizado pelo SCVB reuniu 16 equipas da região e foi um grande sucesso, promovendo o desenvolvimento do futebol jovem.',
+    image: '/images/news/youth-tournament.jpg',
+    category: 'Formação',
+    date: '29 Jan 2025',
+  }
+];
